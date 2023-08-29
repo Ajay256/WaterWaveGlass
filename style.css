@@ -1,0 +1,65 @@
+:root{
+
+    /* define variable for fill the box   */
+    --filling: 50%;
+    --offset: 2vh;
+}
+
+/* body design and set box position */
+body{
+    display: grid;
+    background-color: #d8d8e0;
+    place-content: center;
+    height: 100vh;
+}
+
+/* design the glass box  */
+.filling{
+    background-color: #ffffff;
+    height: 60vh;
+    width: 40vh;
+    border: 2px solid black;
+    border-top: 1px none #f2ecec ;
+    position: relative;
+    border-bottom-left-radius:50px;
+    border-bottom-right-radius: 50px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 17px 23px 18px 3px rgba(41,43,45,0.75);;
+}
+
+/* design the number inside box  */
+output{
+    font-size: 30px;
+    font-weight: 600;
+    z-index: 1;
+}
+
+/* Add style to fill water in box  */
+.filling::after{
+    background: linear-gradient(to bottom, #bce6ec,#72d7f3);
+    display: block;
+    content: "";
+    border-radius: 40vh;
+    width: 90vh;
+    height: 90vh;
+    top: calc(100% - var(--filling) + var(--offset));
+    position: absolute;
+    /* left: 50%; */
+    animation: spin 3s linear infinite;
+
+}
+
+/* define wave animation  */
+@keyframes spin {
+    100% {
+        rotate: 360deg;
+    }
+}
+
+/* Add margin in input range  */
+input{
+    margin-top: 50px;
+}
